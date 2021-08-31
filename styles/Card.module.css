@@ -1,13 +1,14 @@
 .grid {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: center;
-  flex-wrap: wrap;
   max-width: 900px;
   margin-top: 3rem;
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
   margin: 1rem;
   padding: 1.5rem;
   text-align: left;
@@ -16,7 +17,7 @@
   border: 3px solid #eaeaea;
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
-  width: 45%;
+  width: 350px;
   height: 220px;
 }
 
@@ -29,7 +30,7 @@
 
 .card h2 {
   margin: 0 0 2rem 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .card p {

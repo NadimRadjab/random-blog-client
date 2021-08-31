@@ -1,64 +1,14 @@
 import cardStyles from "../styles/Card.module.css";
 import Link from "next/link";
 
-const Card = () => {
+const Card = ({ title, text, id }) => {
   return (
-    <div className={cardStyles.grid}>
-      <Link href="/posts/:id">
-        <a className={cardStyles.card}>
-          <h2>Name</h2>
-          <p>HAhahahahahahhahahahh</p>
-        </a>
-      </Link>
-      <Link href="#">
-        <a className={cardStyles.card}>
-          <h2>Name</h2>
-          <p>HAhahahahahahhahahahh</p>
-        </a>
-      </Link>
-      <Link href="#">
-        <a className={cardStyles.card}>
-          <h2>Name</h2>
-          <p>HAhahahahahahhahahahh</p>
-        </a>
-      </Link>
-      <Link href="#">
-        <a className={cardStyles.card}>
-          <h2>Name</h2>
-          <p>HAhahahahahahhahahahh</p>
-        </a>
-      </Link>
-      <Link href="#">
-        <a className={cardStyles.card}>
-          <h2>Name</h2>
-          <p>HAhahahahahahhahahahh</p>
-        </a>
-      </Link>
-      <Link href="#">
-        <a className={cardStyles.card}>
-          <h2>Name</h2>
-          <p>HAhahahahahahhahahahh</p>
-        </a>
-      </Link>
-      <Link href="#">
-        <a className={cardStyles.card}>
-          <h2>Name</h2>
-          <p>HAhahahahahahhahahahh</p>
-        </a>
-      </Link>
-      <Link href="#">
-        <a className={cardStyles.card}>
-          <h2>Name</h2>
-          <p>HAhahahahahahhahahahh</p>
-        </a>
-      </Link>
-      <Link href="#">
-        <a className={cardStyles.card}>
-          <h2>Name</h2>
-          <p>HAhahahahahahhahahahh</p>
-        </a>
-      </Link>
-    </div>
+    <Link href={`/posts/${id}`}>
+      <a className={cardStyles.card}>
+        <h2>{title}</h2>
+        <p>{text}</p>
+      </a>
+    </Link>
   );
 };
 
