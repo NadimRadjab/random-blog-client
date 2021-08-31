@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
         Random Blog for all the random posts you can think off!
       </Heading>
       <div className={styles.container}>
-        <main className={styles.card}>{children}</main>
+        <main className={styles.main}>{children}</main>
       </div>
       <footer className={styles.footer}>
         <a>

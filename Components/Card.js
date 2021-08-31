@@ -4,7 +4,7 @@ import Link from "next/link";
 const Card = () => {
   return (
     <div className={cardStyles.grid}>
-      <Link href="#">
+      <Link href="/posts/:id">
         <a className={cardStyles.card}>
           <h2>Name</h2>
           <p>HAhahahahahahhahahahh</p>
