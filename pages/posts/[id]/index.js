@@ -1,53 +1,56 @@
 import { Container, Text, Heading } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
 import FormPost from "../../../Components/FormPost";
 import Comment from "../../../Components/Comment";
 import postStyles from "../../../styles/Post.module.css";
+import axios from "axios";
 
-const Post = () => {
+const Post = ({ item }) => {
+  const [comments, setComments] = useState(item.comments);
+  const addComment = (comment) => {
+    setComments([...comments, comment]);
+  };
+
   return (
     <div className={postStyles.container}>
       <Heading mt={2} as="h2" size="xl">
-        I'm a Heading
+        {item.name}
       </Heading>
       <Text mt={6} fontSize="2xl">
-        There are many benefits to a joint design and development system. Not
-        only does it bring benefits to the design team, but it also brings
-        benefits to engineering teams. It makes sure that our experiences have a
-        consistent look and feel, not just in our design specs, but in
-        production There are many benefits to a joint design and development
-        system. Not only does it bring benefits to the design team, but it also
-        brings benefits to engineering teams. It makes sure that our experiences
-        have a consistent look and feel, not just in our design specs, but in
-        production There are many benefits to a joint design and development
-        system. Not only does it bring benefits to the design team, but it also
-        brings benefits to engineering teams. It makes sure that our experiences
-        have a consistent look and feel, not just in our design specs, but in
-        production onsistent look and feel, not just in our design specs, but in
-        production There are many benefits to a joint design and development
-        system. Not only does it bring benefits to the design team, but it also
-        brings benefits to engineering teams. It makes sure that our experiences
-        have a consistent look and feel, not just in our design specs, but in
-        production There are many benefits to a joint design and development
-        system. Not only does it bring benefits to the design team, but it also
-        brings benefits to engineering teams. It makes sure that our experiences
-        have a consistent look and feel, not just in our design specs, but in
-        production
+        {item.text}
       </Text>
       <Container>
-        <FormPost />
+        <FormPost item={item} addComment={addComment} />
         <Container d="flex" flexDirection="column" alignItems="center" mt={4}>
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
-          <Comment />
+          {comments.map((comment) => (
+            <Comment key={comment._id} comment={comment} />
+          ))}
         </Container>
       </Container>
     </div>
   );
+};
+export const getStaticProps = async (context) => {
+  const res = await axios.get(
+    `http://localhost:5000/api/posts/${context.params.id}`
+  );
+  const item = res.data;
+  return {
+    props: {
+      item,
+    },
+  };
+};
+
+export const getStaticPaths = async () => {
+  const res = await axios.get(`http://localhost:5000/api/posts`);
+  const posts = res.data;
+  const ids = posts.map((post) => post._id);
+  const paths = ids.map((id) => ({ params: { id: id.toString() } }));
+  return {
+    paths,
+    fallback: false,
+  };
 };
 
 export default Post;

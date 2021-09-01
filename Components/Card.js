@@ -6,6 +6,7 @@ const Card = ({ title, text, id }) => {
     <Link href={`/posts/${id}`}>
       <a className={cardStyles.card}>
         <h2>{title}</h2>
+        <h3>{}</h3>
         <p>{text}</p>
       </a>
     </Link>

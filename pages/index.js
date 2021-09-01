@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import Card from "../Components/Card";
 import axios from "axios";

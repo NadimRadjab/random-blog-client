@@ -36,14 +36,13 @@
 }
 
 .title a {
-  color: #0070f3;
   text-decoration: none;
 }
 
 .title a:hover,
 .title a:focus,
 .title a:active {
-  text-decoration: underline;
+  cursor: pointer;
 }
 
 .title {
@@ -65,7 +64,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 220px;
+  height: 350px;
   width: 100%;
   background-color: #b8b8b8;
 }

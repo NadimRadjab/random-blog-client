@@ -1,6 +1,6 @@
 import { Box, Badge, Flex } from "@chakra-ui/react";
 
-const Comment = () => {
+const Comment = ({ comment }) => {
   return (
     <Box
       mt="3"
@@ -19,7 +19,7 @@ const Comment = () => {
             px="3"
             colorScheme="gray"
           >
-            Name
+            {comment.authorname}
           </Badge>
 
           <Box
@@ -30,12 +30,14 @@ const Comment = () => {
             textTransform="uppercase"
             ml="2"
           >
-            Date
+            {new Date(comment.creationDate).toUTCString().substr(0, 17)}
           </Box>
         </Box>
 
         <Box d="flex" mt="5" alignItems="center">
-          <Box as="span" ml="2" color="gray.800" fontSize="sm"></Box>
+          <Box as="span" ml="2" color="gray.800" fontSize="sm">
+            {comment.text}
+          </Box>
         </Box>
       </Box>
     </Box>
