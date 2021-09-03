@@ -18,6 +18,7 @@ function Home({ posts }) {
             id={post._id}
             title={post.name}
             text={post.text}
+            date={post.creationDate}
           />
         ))}
       </div>

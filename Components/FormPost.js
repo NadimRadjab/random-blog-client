@@ -61,7 +61,7 @@ const FormPost = ({ addComment }) => {
               required
               id="text"
               name="text"
-              placeholder="Here is a sample text"
+              placeholder="Comment..."
             />
           </FormControl>
           <Button

@@ -5,7 +5,7 @@ const Comment = ({ comment }) => {
     <Box
       mt="3"
       maxW="xl"
-      width="600px"
+      w={[200, 400, 500, 600]}
       borderWidth="2px"
       borderRadius="lg"
       overflow="hidden"
@@ -16,7 +16,7 @@ const Comment = ({ comment }) => {
             d="flex"
             justifyContent="space-evenly"
             borderRadius="full"
-            px="3"
+            px={[1, 2, 3, 4]}
             colorScheme="gray"
           >
             {comment.authorname}
@@ -35,7 +35,7 @@ const Comment = ({ comment }) => {
         </Box>
 
         <Box d="flex" mt="5" alignItems="center">
-          <Box as="span" ml="2" color="gray.800" fontSize="sm">
+          <Box d="flex" as="span" ml="2" color="gray.800" fontSize="sm">
             {comment.text}
           </Box>
         </Box>

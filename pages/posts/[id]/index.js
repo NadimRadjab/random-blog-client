@@ -1,5 +1,5 @@
 import { Container, Text, Heading } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import FormPost from "../../../Components/FormPost";
 import Comment from "../../../Components/Comment";
 import postStyles from "../../../styles/Post.module.css";
@@ -16,17 +16,17 @@ const Post = ({ item }) => {
       <Heading mt={2} as="h2" size="xl">
         {item.name}
       </Heading>
-      <Text mt={6} fontSize="2xl">
+      <Text fontSize={[17, 20, 25]} mt={6}>
         {item.text}
       </Text>
-      <Container>
+      <div>
         <FormPost item={item} addComment={addComment} />
         <Container d="flex" flexDirection="column" alignItems="center" mt={4}>
           {comments.map((comment) => (
             <Comment key={comment._id} comment={comment} />
           ))}
         </Container>
-      </Container>
+      </div>
     </div>
   );
 };
