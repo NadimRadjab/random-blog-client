@@ -8,7 +8,7 @@ function Home({ posts }) {
   return (
     <div>
       <Head>
-        <title>Blog Api</title>
+        <title>Random Blog</title>
         <meta name="description" content="Blog for reating andom posts." />
       </Head>
       <div className={cardStyles.grid}>
@@ -27,7 +27,9 @@ function Home({ posts }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await axios.get("http://localhost:5000/api/posts");
+  const res = await axios.get(
+    "https://powerful-castle-69788.herokuapp.com/api/posts"
+  );
   const posts = res.data;
   return {
     props: {

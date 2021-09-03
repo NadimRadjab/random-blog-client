@@ -32,7 +32,7 @@ const Post = ({ item }) => {
 };
 export const getStaticProps = async (context) => {
   const res = await axios.get(
-    `http://localhost:5000/api/posts/${context.params.id}`
+    `https://powerful-castle-69788.herokuapp.com/api/posts/${context.params.id}`
   );
   const item = res.data;
   return {
@@ -43,7 +43,9 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-  const res = await axios.get(`http://localhost:5000/api/posts`);
+  const res = await axios.get(
+    `https://powerful-castle-69788.herokuapp.com/api/posts`
+  );
   const posts = res.data;
   const ids = posts.map((post) => post._id);
   const paths = ids.map((id) => ({ params: { id: id.toString() } }));

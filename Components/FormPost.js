@@ -25,7 +25,7 @@ const FormPost = ({ addComment }) => {
       text,
     };
     const res = await axios.post(
-      `http://localhost:5000/api/posts/${id}/comments`,
+      `https://powerful-castle-69788.herokuapp.com/api/posts/${id}/comments`,
       comment
     );
     addComment(res.data);
