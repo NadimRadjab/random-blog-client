@@ -1,8 +1,12 @@
 import styles from "../styles/Layout.module.css";
-import { Box, Text, Image } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
+import Image from "next/image";
 import Link from "next/link";
+import pic from "../public/photo.jpeg";
 import { Github } from "react-bootstrap-icons";
+const prefix = "/random-blog-client";
 const Layout = ({ children }) => {
+  console.log(pic);
   return (
     <>
       <header className={styles.title}>
@@ -14,9 +18,10 @@ const Layout = ({ children }) => {
       </header>
       <Box>
         <Image
-          className={styles.header}
+          height="250px"
+          width="100%"
           alt="header-pic"
-          src="https://images.unsplash.com/photo-1560415755-bd80d06eda60?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1154&q=80"
+          src={prefix + pic}
         />
       </Box>
       <div className={styles.container}>
