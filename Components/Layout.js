@@ -17,12 +17,7 @@ const Layout = ({ children }) => {
         </Link>
       </header>
       <Box>
-        <Image
-          height="250px"
-          width="100%"
-          alt="header-pic"
-          src={prefix + pic}
-        />
+        <img height="250px" width="100%" alt="header-pic" src={prefix + pic} />
       </Box>
       <div className={styles.container}>
         <main className={styles.main}>{children}</main>
