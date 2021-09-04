@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next export",
-    "start": "next dev",
+    "start": "next start -p $PORT",
+    "heroku-postbuild": "npm run build",
     "lint": "next lint"
   },
   "dependencies": {
