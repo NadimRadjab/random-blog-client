@@ -21,14 +21,19 @@ const Post = ({ item }) => {
       <Text fontSize={[17, 20, 25]} mt={6}>
         {item.text}
       </Text>
-      <div>
-        <FormPost item={item} addComment={addComment} />
-        <Container d="flex" flexDirection="column" alignItems="center" mt={4}>
-          {comments.map((comment) => (
-            <Comment key={comment._id} comment={comment} />
-          ))}
-        </Container>
-      </div>
+
+      <FormPost item={item} addComment={addComment} />
+      <Container
+        className={postStyles.commentsContainer}
+        d="flex"
+        flexDirection="column"
+        alignItems="center"
+        mt={4}
+      >
+        {comments.map((comment) => (
+          <Comment key={comment._id} comment={comment} />
+        ))}
+      </Container>
     </div>
   );
 };

@@ -26,7 +26,7 @@ function Home({ posts }) {
   );
 }
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await axios.get(
     "https://powerful-castle-69788.herokuapp.com/api/posts"
   );

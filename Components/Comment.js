@@ -5,7 +5,7 @@ const Comment = ({ comment }) => {
     <Box
       mt="3"
       maxW="xl"
-      w={[200, 400, 500, 600]}
+      w={[300, 400, 500, 600]}
       borderWidth="2px"
       borderRadius="lg"
       overflow="hidden"
