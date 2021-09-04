@@ -32,7 +32,7 @@ const Post = ({ item }) => {
     </div>
   );
 };
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
   const res = await axios.get(
     `https://powerful-castle-69788.herokuapp.com/api/posts/${context.params.id}`
   );
@@ -44,17 +44,17 @@ export const getStaticProps = async (context) => {
   };
 };
 
-export const getStaticPaths = async () => {
-  const res = await axios.get(
-    `https://powerful-castle-69788.herokuapp.com/api/posts`
-  );
-  const posts = res.data;
-  const ids = posts.map((post) => post._id);
-  const paths = ids.map((id) => ({ params: { id: id.toString() } }));
-  return {
-    paths,
-    fallback: false,
-  };
-};
+// export const getStaticPaths = async () => {
+//   const res = await axios.get(
+//     `https://powerful-castle-69788.herokuapp.com/api/posts`
+//   );
+//   const posts = res.data;
+//   const ids = posts.map((post) => post._id);
+//   const paths = ids.map((id) => ({ params: { id: id.toString() } }));
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
 
 export default Post;
