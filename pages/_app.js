@@ -1,7 +1,8 @@
 import "../styles/globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import Layout from "../Components/Layout";
-const prefix = "/random-blog-client";
+const prefix = process.env.NEXT_NEXT_PUBLIC_BASE_PATH || "";
+
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider>

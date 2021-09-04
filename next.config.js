@@ -1,5 +1,5 @@
 const isProd = process.env.NODE_ENV === "production";
 module.exports = {
-  basePath: "/random-blog-client",
-  assetPrefix: isProd ? "/random-blog-client" : "",
+  basePath: process.env.NEXT_NEXT_PUBLIC_BASE_PATH,
+  assetPrefix: isProd ? process.env.NEXT_NEXT_PUBLIC_BASE_PATH : "",
 };
