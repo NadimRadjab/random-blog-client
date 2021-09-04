@@ -1,16 +1,18 @@
 import { Container, Text, Heading } from "@chakra-ui/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FormPost from "../../../Components/FormPost";
 import Comment from "../../../Components/Comment";
 import postStyles from "../../../styles/Post.module.css";
 import axios from "axios";
 
 const Post = ({ item }) => {
-  const [comments, setComments] = useState(item.comments);
+  const [comments, setComments] = useState([]);
   const addComment = (comment) => {
     setComments([...comments, comment]);
   };
-
+  useEffect(() => {
+    setComments(item.comments);
+  }, [item]);
   return (
     <div className={postStyles.container}>
       <Heading mt={2} as="h2" size="xl">
