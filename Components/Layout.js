@@ -1,9 +1,8 @@
 import styles from "../styles/Layout.module.css";
 import { Box, Text, Image } from "@chakra-ui/react";
 import Link from "next/link";
-
 import { Github } from "react-bootstrap-icons";
-const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const Layout = ({ children }) => {
   return (
     <>
@@ -15,11 +14,7 @@ const Layout = ({ children }) => {
         </Link>
       </header>
       <Box>
-        <Image
-          className={styles.header}
-          alt="header-pic"
-          src={prefix + "/photo.jpeg"}
-        />
+        <Image className={styles.header} alt="header-pic" src="/photo.jpeg" />
       </Box>
       <div className={styles.container}>
         <main className={styles.main}>{children}</main>
