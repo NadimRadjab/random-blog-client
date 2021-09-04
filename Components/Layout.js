@@ -3,7 +3,7 @@ import { Box, Text, Image } from "@chakra-ui/react";
 import Link from "next/link";
 
 import { Github } from "react-bootstrap-icons";
-const prefix = process.env.NEXT_NEXT_PUBLIC_BASE_PATH || "";
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const Layout = ({ children }) => {
   return (
     <>

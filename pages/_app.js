@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import Layout from "../Components/Layout";
-const prefix = process.env.NEXT_NEXT_PUBLIC_BASE_PATH || "";
+const prefix = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 function MyApp({ Component, pageProps }) {
   return (
